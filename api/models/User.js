@@ -3,28 +3,29 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema(
   {
     username: {
-      type: "string",
+      type: String,
+      require: true,
       min: 3,
       max: 20,
       unique: true,
     },
     email: {
-      type: "string",
+      type: String,
       required: true,
       max: 50,
       unique: true,
     },
     password: {
-      type: "string",
+      type: String,
       required: true,
       min: 6,
     },
     profilePicture: {
-      type: "string",
+      type: String,
       default: "",
     },
     coverPicture: {
-      type: "string",
+      type: String,
       default: "",
     },
     followers: {
@@ -40,15 +41,15 @@ const UserSchema = new mongoose.Schema(
       default: false,
     },
     desc: {
-      type: "string",
+      type: String,
       max: 50,
     },
     city: {
-      type: "string",
+      type: String,
       max: 50,
     },
     from: {
-      type: "string",
+      type: String,
       max: 50,
     },
     relationship: {
